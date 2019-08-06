@@ -7,7 +7,7 @@ namespace Lemonade
     class Store
     {
         //member variables has a
-        public string products;
+        public double products;
         public int price;
 
         //contructor 

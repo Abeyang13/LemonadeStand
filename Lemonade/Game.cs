@@ -7,29 +7,47 @@ namespace Lemonade
     class Game
     {
         //member variables has a
-        public string player;
+        private Player playerName;
         List<string> customers = new List<string>();
-        public string rules;
         public int counter;
+        public List<Day> Days;
+        private Store store;
+        private Random random;
+        
 
 
 
         //contructor 
+        public Game()
+        {
+            random = new Random();
+            counter = 0;
+        }
+
 
 
         //methods to do 
         public void RunGame()
         {
             DisplayRules();
-
+            SevenDays();
 
 
         }
-        private string DisplayRules()
+        private void DisplayRules()
         {
             Console.WriteLine("these are the rules");
-            rules = Console.ReadLine();
-            return rules;
         }
+        private void SevenDays()
+        {
+            const int numberOfDays = 7;
+            Days = new List<Day>();   
+            for (int i = 0; i < numberOfDays; i++)
+            {
+                Day day = new Day(random);
+                Days.Add(day);
+            }
+        }
+
     }
 }

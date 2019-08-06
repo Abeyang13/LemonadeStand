@@ -9,7 +9,7 @@ namespace Lemonade
         //member variables has a
         public int lemon;
         public int sugar;
-        public int ice;
+        public int iceCube;
         public int cup;
         public int recipe;
         public int counter;
@@ -22,5 +22,6 @@ namespace Lemonade
             }
 
         //methods to do 
+
     }
 }
