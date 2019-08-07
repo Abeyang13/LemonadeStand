@@ -11,7 +11,6 @@ namespace Lemonade
         public int sugar;
         public int iceCube;
         public int cup;
-        public int recipe;
         public int counter;
         public double cash;
 

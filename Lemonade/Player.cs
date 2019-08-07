@@ -10,6 +10,7 @@ namespace Lemonade
         public string inventory;
         public int stand;
         public string name;
+        public int recipe;
 
 
         //contructor 
