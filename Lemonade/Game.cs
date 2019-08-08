@@ -21,15 +21,19 @@ namespace Lemonade
         {
             random = new Random();
             counter = 0;
-            
+            playerName = new Player();
         }
 
         //methods to do 
         public void RunGame()
         {
             DisplayRules();
+            playerName.ChooseName();
             Console.WriteLine("Our 7 day forecast is \n");
             SevenDays();
+
+            
+            
 
             int numberOfDays = 0;
 
@@ -40,16 +44,11 @@ namespace Lemonade
                 numberOfDays++;
 
             }
-           
-
-            
-
-            
-
         }
+       
         private void DisplayRules()
         {
-            Console.WriteLine("these are the rules");
+            Console.WriteLine("these are the rules \n");
         }
         public void SevenDays()
         {

@@ -17,7 +17,8 @@ namespace Lemonade
         {
             lemon = .20;
             sugar = .25;
-            iceCube = .2;
+            iceCube = .02;
+            cup = .05;
 
         }
 

@@ -8,14 +8,14 @@ namespace Lemonade
     {
         //member variables has a
         public Weather weather;
-        public List<Customer> Customers;
+        List<Customer> customers;
         Random random;
         
 
 
         //contructor 
         public Day(Random random)
-        {
+        { 
             weather = new Weather(random);
             this.random = random;
             weather.RandomTemperature();
@@ -37,7 +37,7 @@ namespace Lemonade
 
 
             //player goes to stand and start the actual sale of lemonade
-
+            CustomersList();
 
 
             //show end the of the day progress for profit or loss
@@ -45,15 +45,15 @@ namespace Lemonade
 
 
         }
-        //methods to do
-        private void CustomersList()
+        public void CustomersList()
         {
             const int numberOfCustomers = 100;
-            Customers = new List<Customer>();
+            customers = new List<Customer>();
             for (int i = 0; i < numberOfCustomers; i++)
             {
-                Customer customer = new Customer(40, 61);
-                Customers.Add(customer);
+                Console.WriteLine($"Customer: {i + 1}");
+                Customer customer = new Customer(random, weather);
+                customers.Add(customer);
             }
         }
 

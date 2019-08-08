@@ -25,8 +25,6 @@ namespace Lemonade
         public void RandomTemperature()
         {
             temperature = random.Next(50,100);
-            //int generateTemp = random.Next(50, 100);
-            //temperature = generateTemp;
             Console.WriteLine(" Today's temperature is " + temperature);
         }
         public void RandomCondition()
@@ -43,9 +41,9 @@ namespace Lemonade
 
         public void ActualTemperature()
         {
-            Console.WriteLine(" Today's forecast is " + temperature + " degrees " + condition);
+            Console.WriteLine(" Today's forecast is " + temperature + " degrees and " + condition);
             temperature = random.Next(temperature - 5, temperature + 5);
-            Console.WriteLine(" Actual temperature is " + temperature);
+            Console.WriteLine(" Actual temperature is " + temperature + " degrees and " + condition);
         }
     }
 }
