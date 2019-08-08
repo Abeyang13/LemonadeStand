@@ -7,20 +7,23 @@ namespace Lemonade
     class Inventory
     {
         //member variables has a
-        public int lemon;
-        public int sugar;
-        public int iceCube;
-        public int cup;
-        public int counter;
-        public double cash;
+        public int lemons;
+        public int sugars;
+        public int iceCubes;
+        public int cups;
 
         //contructor 
         public Inventory()
-            {
-            cash = 20;
-            }
+        {
+
+        }
 
         //methods to do 
+        public void InventoryMenu()
+        {
+            Console.WriteLine("Please select what you want to update.  Type lemon, sugar, cup, iceCube, or Type skip to go to next step");
+
+        }
 
     }
 }

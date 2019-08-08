@@ -8,7 +8,8 @@ namespace Lemonade
     {
         //member variables has a
         public int temperature;
-        public string[]conditions = new string[3];
+        public string condition;
+        public string[] conditions = new string[3];
         Random random;
 
 
@@ -17,25 +18,34 @@ namespace Lemonade
         public Weather(Random random)
         {
             this.random = random;
-            
         }
 
 
         //methods to do 
         public void RandomTemperature()
         {
-            Random random = new Random();
-            int generateTemp = random.Next(50, 100);
-            temperature = generateTemp;
+            temperature = random.Next(50,100);
+            //int generateTemp = random.Next(50, 100);
+            //temperature = generateTemp;
             Console.WriteLine(" Today's temperature is " + temperature);
         }
         public void RandomCondition()
         {
+            
             conditions[0] = "rainy";
             conditions[1] = "cloudy";
             conditions[2] = "sunny";
             Random rng = new Random();
-            Console.WriteLine(" Today is also " + conditions[rng.Next(0,3)] + "\n");
+            string ex = conditions[rng.Next(0, 3)];
+            condition = ex;
+            Console.WriteLine(" Today is also " + condition + "\n");
+        }
+
+        public void ActualTemperature()
+        {
+            Console.WriteLine(" Today's forecast is " + temperature + " degrees " + condition);
+            temperature = random.Next(temperature - 5, temperature + 5);
+            Console.WriteLine(" Actual temperature is " + temperature);
         }
     }
 }

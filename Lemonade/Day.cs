@@ -10,20 +10,41 @@ namespace Lemonade
         public Weather weather;
         public List<Customer> Customers;
         Random random;
+        
 
 
         //contructor 
         public Day(Random random)
         {
             weather = new Weather(random);
-            this.random = new Random();
+            this.random = random;
             weather.RandomTemperature();
             weather.RandomCondition();
+        }
+        public void RunDay(Player player)
+        {
+            //show actual temperature and condiiton 
+            weather.ActualTemperature();
+
+
+
+            //show inventory 
+
+
+
+            //player goes to store 
+
+
+
+            //player goes to stand and start the actual sale of lemonade
+
+
+
+            //show end the of the day progress for profit or loss
 
 
 
         }
-
         //methods to do
         private void CustomersList()
         {
@@ -35,5 +56,6 @@ namespace Lemonade
                 Customers.Add(customer);
             }
         }
+
     }
 }

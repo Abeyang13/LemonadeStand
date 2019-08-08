@@ -9,10 +9,9 @@ namespace Lemonade
         //member variables has a
         private Player playerName;
         public int counter;
-        public List<Day> Days;
-        private Store store;
-        private Random random;
-        private int forecast;
+        List<Day> days;
+        Store store;
+        Random random;
         
 
 
@@ -22,13 +21,28 @@ namespace Lemonade
         {
             random = new Random();
             counter = 0;
+            
         }
 
         //methods to do 
         public void RunGame()
         {
             DisplayRules();
+            Console.WriteLine("Our 7 day forecast is \n");
             SevenDays();
+
+            int numberOfDays = 0;
+
+            while (numberOfDays < 7)
+            {
+
+                days[numberOfDays].RunDay(playerName);
+                numberOfDays++;
+
+            }
+           
+
+            
 
             
 
@@ -40,13 +54,13 @@ namespace Lemonade
         public void SevenDays()
         {
             const int numberOfDays = 7;
-            Days = new List<Day>();   
+            days = new List<Day>();
             for (int i = 0; i < numberOfDays; i++)
             {
+                Console.WriteLine($"Day: {i+1}");
                 Day day = new Day(random);
-                Days.Add(day);      
+                days.Add(day);
             }
         }
-
     }
 }

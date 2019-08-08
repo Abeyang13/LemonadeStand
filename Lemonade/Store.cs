@@ -7,12 +7,30 @@ namespace Lemonade
     class Store
     {
         //member variables has a
-        public double products;
-        public int price;
+        public double lemon;
+        public double sugar;
+        public double iceCube;
+        public double cup;
 
-        //contructor 
+        //contructor
+        public Store()
+        {
+            lemon = .20;
+            sugar = .25;
+            iceCube = .2;
+
+        }
 
 
-        //methods to do 
+
+
+
+        //methods to do
+        public void StoreMenu()
+        {
+            Console.WriteLine($"Lemons are {lemon}"); 
+
+
+        }
     }
 }

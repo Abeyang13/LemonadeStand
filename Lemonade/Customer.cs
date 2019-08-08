@@ -20,5 +20,9 @@ namespace Lemonade
 
 
         //methods to do
+        public void MakeDecision(Weather weather, Player player)
+        {
+            //if (weather.temperature <= 70 && player.recipe)
+        }
     }  
 }
