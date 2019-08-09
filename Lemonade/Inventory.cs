@@ -24,7 +24,16 @@ namespace Lemonade
         //methods to do 
         public void InventoryMenu()
         {
-            Console.WriteLine("Please select what you want to update.  Type lemon, sugar, cup, iceCube, or Type skip to go to next step");
+
+            Console.WriteLine("Please select what you want to update.  Type lemons, sugars, cups, iceCubes, or skip to go to next step");
+            string item = Console.ReadLine().ToLower();
+            switch (item)
+            {
+                case :
+
+
+            }
+
 
         }
 

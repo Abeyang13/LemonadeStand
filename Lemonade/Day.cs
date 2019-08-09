@@ -31,7 +31,7 @@ namespace Lemonade
             //show inventory 
 
 
-
+            double moneyAtStartOfDay = player.bank;
             //player goes to store 
 
 

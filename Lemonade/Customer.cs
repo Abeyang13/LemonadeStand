@@ -15,7 +15,7 @@ namespace Lemonade
         public Customer(Random random, Weather weather)
         {
             this.random = new Random();
-            this.wallet = random.Next(1,10);
+            this.wallet = random.Next(5,41) / 100;
             this.temperaturePreferance = random.Next(50, 101);
             MakeDecision(weather);
         }
@@ -24,7 +24,7 @@ namespace Lemonade
         //methods to do
         public void MakeDecision(Weather weather)
         {
-            if (temperaturePreferance > weather.temperature + 5 && wallet < 8)
+            if (temperaturePreferance <= weather.temperature && wallet < 30 )
             {
                 Console.WriteLine("Buy");
             }

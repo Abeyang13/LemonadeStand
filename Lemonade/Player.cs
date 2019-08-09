@@ -7,7 +7,7 @@ namespace Lemonade
     class Player
     {
         //member variables has a
-        Inventory inventory;
+        public Inventory inventory;
         public double bank;
         public string name;
 
@@ -27,7 +27,14 @@ namespace Lemonade
         }
         public void StandRecipe()
         {
+            Console.WriteLine("Please select what you want to update for recipe.  Enter amount of lemons, sugar, icecubes you want per cup");
+            string recipe = Console.ReadLine().ToLower();
+            switch (recipe)
+            {
+                case 1:  "lemons";
+                    break;
 
+            }
         }
 
     }
