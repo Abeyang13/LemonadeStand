@@ -33,15 +33,19 @@ namespace Lemonade
                 {
                     case "lemon":
                         PurchaseLemon(player);
+                        Console.WriteLine($"Bank = ${player.bank}");
                         break;
                     case "sugar":
                         PurchaseSugar(player);
+                        Console.WriteLine($"Bank = ${player.bank}");
                         break;
                     case "icecube":
                         PurchaseIce(player);
+                        Console.WriteLine($"Bank = ${player.bank}");
                         break;
                     case "cup":
                         PurchaseCup(player);
+                        Console.WriteLine($"Bank = ${player.bank}");
                         break;
                     case "back":
                         player.inventory.DisplayInventory();

@@ -7,15 +7,16 @@ namespace Lemonade
     class Customer
     {
         //member variables has a
-        public double wallet;
         public int temperaturePreferance;
+        public int pricePreferance;
+        public bool chooseToBuy;
         Random random;
 
         //contructor 
         public Customer(Random random, Weather weather)
         {
             this.random = new Random();
-            this.wallet = random.Next(5,41) / 100;
+            this.pricePreferance = random.Next(5, 41) / 100;
             this.temperaturePreferance = random.Next(50, 101);
             MakeDecision(weather);
         }
@@ -24,8 +25,10 @@ namespace Lemonade
         //methods to do
         public void MakeDecision(Weather weather)
         {
-            if (temperaturePreferance <= weather.temperature && wallet < 30 )
+           
+            if (temperaturePreferance <= weather.temperature && pricePreferance < (32)/100)
             {
+                chooseToBuy = true;
                 Console.WriteLine("Buy");
             }
         }
