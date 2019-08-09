@@ -27,25 +27,25 @@ namespace Lemonade
             bool isValid = false;
             while (!isValid)
             {
-                Console.WriteLine("Please select what you would want to purchase. Please input lemon, sugar, icecube, cup, exit to exit menu, or back to go back to look inventory");
+                Console.WriteLine("Please select what you would want to purchase.\nPlease input lemon, sugar, icecube, cup, exit to exit menu, or back to go back to look inventory");
                 string storeItem = Console.ReadLine().ToLower();
                 switch (storeItem)
                 {
                     case "lemon":
                         PurchaseLemon(player);
-                        Console.WriteLine($"Bank = ${player.bank}");
+                        Console.WriteLine($"Your money left after purchase = ${player.bank}");
                         break;
                     case "sugar":
                         PurchaseSugar(player);
-                        Console.WriteLine($"Bank = ${player.bank}");
+                        Console.WriteLine($"Your money left after purchase = ${player.bank}");
                         break;
                     case "icecube":
                         PurchaseIce(player);
-                        Console.WriteLine($"Bank = ${player.bank}");
+                        Console.WriteLine($"Your money left after purchase = ${player.bank}");
                         break;
                     case "cup":
                         PurchaseCup(player);
-                        Console.WriteLine($"Bank = ${player.bank}");
+                        Console.WriteLine($"Your money left after purchase = ${player.bank}");
                         break;
                     case "back":
                         player.inventory.DisplayInventory();

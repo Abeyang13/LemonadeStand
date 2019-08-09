@@ -43,7 +43,7 @@ namespace Lemonade
         {
             Console.WriteLine(" Today's forecast is " + temperature + " degrees and " + condition);
             temperature = random.Next(temperature - 5, temperature + 5);
-            Console.WriteLine(" Actual temperature is " + temperature + " degrees and " + condition);
+            Console.WriteLine(" Actual temperature is " + temperature + " degrees and " + condition + "\n");
         }
     }
 }

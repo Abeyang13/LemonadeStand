@@ -26,7 +26,7 @@ namespace Lemonade
         public void MakeDecision(Weather weather)
         {
            
-            if (temperaturePreferance <= weather.temperature && pricePreferance < (32)/100)
+            if (temperaturePreferance <= weather.temperature && pricePreferance < 32)
             {
                 chooseToBuy = true;
                 Console.WriteLine("Buy");

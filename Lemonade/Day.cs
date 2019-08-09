@@ -11,6 +11,7 @@ namespace Lemonade
         List<Customer> customers;
         Random random;
         double moneyAtStartOfDay;
+        double moneyAtEndOfDay;
 
 
         //contructor 
@@ -25,18 +26,16 @@ namespace Lemonade
         {
             //show actual temperature and condiiton 
             weather.ActualTemperature();
-
-
-
-            //show inventory 
+            //start of Day
             moneyAtStartOfDay = player.bank;
-            Console.WriteLine(moneyAtStartOfDay);
+            Console.WriteLine($"{player.name} Your money to start the day is ${moneyAtStartOfDay}\n");
             player.inventory.DisplayInventory();
-            
-            //player goes to store 
+            //player goes to store after that set recipe
             store.StoreMenu(player);
             player.Recipe();
-            //player goes to stand and start the actual sale of lemonade also have to set recipe
+            Console.WriteLine("Update of Inventory\n");
+            //display inventory again to make sure recipe was subtracted from inventory
+            player.inventory.DisplayInventory();
             //recipe cup price added to player.bank everytime a customer buys a cup
             CustomersList();
             for (int i = 0; i < customers.Count; i++)
@@ -47,6 +46,8 @@ namespace Lemonade
                 }
             }
             //show end the of the day progress for profit or loss
+            moneyAtEndOfDay = player.bank;
+            Console.WriteLine($"{player.name} Your money to end the day is ${moneyAtEndOfDay}\n");
         }
         public void CustomersList()
         {

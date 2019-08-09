@@ -24,10 +24,11 @@ namespace Lemonade
         //methods to do 
         public void DisplayInventory()
         {
-            Console.WriteLine($" Lemon: {lemons}");
+            Console.WriteLine("Your Inventory:");
+            Console.WriteLine($"Lemon: {lemons}");
             Console.WriteLine($"Sugar: {sugars}");
             Console.WriteLine($"IceCubes: {iceCubes}");
-            Console.WriteLine($"Cups: {cups}");
+            Console.WriteLine($"Cups: {cups}\n");
         }
 
     }

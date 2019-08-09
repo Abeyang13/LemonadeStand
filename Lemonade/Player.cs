@@ -11,6 +11,9 @@ namespace Lemonade
         public double bank;
         public string name;
         public double pricePerCup;
+        int amountLemonRecipe;
+        int amountSugarRecipe;
+        int amountIceRecipe;
 
 
         //contructor 
@@ -31,22 +34,30 @@ namespace Lemonade
             bool isValid = false;
             while(!isValid)
             { 
-                Console.WriteLine("Please select what you want to update for recipe per pitcher made.\n Please input lemons, sugars, icecubes, and cups(for price per up).  Else input exit to exit Recipe");
+                Console.WriteLine("Please select what you want to update for recipe per pitcher made.\nPlease input lemons, sugars, icecubes, and cups(for price per up).  Else input exit to exit Recipe");
                 string recipe = Console.ReadLine().ToLower();
 
                 switch (recipe)
                 {
                     case "lemons":
                         LemonAmount();
+                        Console.WriteLine("Recipe:");
+                        RecipeDisplay();
                         break;
                     case "sugars":
                         SugarAmount();
+                        Console.WriteLine("Recipe:");
+                        RecipeDisplay();
                         break;
                     case "icecubes":
                         IceCubeAmount();
+                        Console.WriteLine("Recipe:");
+                        RecipeDisplay();
                         break;
                     case "cups":
                         CupAmount();
+                        Console.WriteLine("Recipe:");
+                        RecipeDisplay();
                         break;
                     case "exit":
                         isValid = true;
@@ -61,11 +72,10 @@ namespace Lemonade
         public void LemonAmount()
         {
             Console.WriteLine("How many lemons would you want for recipe?");
-            int amountLemonRecipe = int.Parse(Console.ReadLine());
-            if(inventory.lemons > amountLemonRecipe)
+            amountLemonRecipe = int.Parse(Console.ReadLine());
+            if(inventory.lemons >= amountLemonRecipe)
             {
                 inventory.lemons -= amountLemonRecipe;
-                inventory.DisplayInventory();
             }
             else
             {
@@ -76,11 +86,10 @@ namespace Lemonade
         public void SugarAmount()
         {
             Console.WriteLine("How much sugar would you want for recipe?");
-            int amountSugarRecipe = int.Parse(Console.ReadLine());
-            if (inventory.sugars > amountSugarRecipe)
+            amountSugarRecipe = int.Parse(Console.ReadLine());
+            if (inventory.sugars >= amountSugarRecipe)
             {
                 inventory.sugars -= amountSugarRecipe;
-                inventory.DisplayInventory();
             }
             else
             {
@@ -91,11 +100,10 @@ namespace Lemonade
         public void IceCubeAmount()
         {
             Console.WriteLine("How much icecubes would you want for recipe?");
-            int amountIceRecipe = int.Parse(Console.ReadLine());
-            if (inventory.iceCubes > amountIceRecipe)
+            amountIceRecipe = int.Parse(Console.ReadLine());
+            if (inventory.iceCubes >= amountIceRecipe)
             {
                 inventory.iceCubes -= amountIceRecipe;
-                inventory.DisplayInventory();
             }
             else
             {
@@ -108,6 +116,13 @@ namespace Lemonade
             Console.WriteLine("How much should a cup of lemonade be?");
             double price = double.Parse(Console.ReadLine());
             pricePerCup = price;
+        }
+        public void RecipeDisplay()
+        {
+            Console.WriteLine($"Lemon = {amountLemonRecipe}");
+            Console.WriteLine($"Sugar = {amountSugarRecipe}");
+            Console.WriteLine($"IceCube = {amountIceRecipe}");
+            Console.WriteLine($"Cup price = {pricePerCup}");
         }
     }
 }

@@ -8,7 +8,7 @@ namespace Lemonade
     {
         //member variables has a
         private Player playerName;
-        public int counter;
+        double profit;
         Store store;
         List<Day> days;
         Random random;
@@ -21,7 +21,6 @@ namespace Lemonade
         {
             store = new Store();
             random = new Random();
-            counter = 0;
             playerName = new Player();
         }
 
@@ -38,11 +37,21 @@ namespace Lemonade
                 days[numberOfDays].RunDay(playerName, store);
                 numberOfDays++;
             }
+            profit = playerName.bank - 30;
+            Console.WriteLine($"Your total for the week is ${playerName.bank}");
+            if (profit > 0)
+            {
+                Console.WriteLine($"You Made a Profit of ${profit}");
+            }
+            else
+            {
+                Console.WriteLine($"We made a loss and you're eating them cups since we're negative ${profit}");
+            }
         }
        
         private void DisplayRules()
         {
-            Console.WriteLine("these are the rules \n");
+            Console.WriteLine("these are the rules\n");
         }
         public void SevenDays()
         {
