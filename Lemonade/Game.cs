@@ -40,7 +40,7 @@ namespace Lemonade
             while (numberOfDays < 7)
             {
 
-                days[numberOfDays].RunDay(playerName);
+                days[numberOfDays].RunDay(playerName, store);
                 numberOfDays++;
 
             }

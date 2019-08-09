@@ -25,17 +25,83 @@ namespace Lemonade
             Console.Write("Please input your name \n");
             name = Console.ReadLine();
         }
-        public void StandRecipe()
+        public void Recipe()
         {
-            Console.WriteLine("Please select what you want to update for recipe.  Enter amount of lemons, sugar, icecubes you want per cup");
+            Console.WriteLine("Please select what you want to update for recipe per pitcher made.  Please input lemons, sugars, icecubes, and cups(for price per up)");
             string recipe = Console.ReadLine().ToLower();
             switch (recipe)
             {
-                case 1:  "lemons";
+                case "lemons":
+                    LemonAmount();
                     break;
-
+                case "sugars":
+                    SugarAmount();
+                    break;
+                case "icecubes":
+                    IceCubeAmount();
+                    break;
+                case "cups":
+                    CupAmount();
+                    break;
+                default:
+                    Console.WriteLine("You have put a invalid input.  Please enter lemons, sugars, icecubes, or cups");
+                    Recipe();
+                    break;
             }
         }
+        public void LemonAmount()
+            //lemonamount should be amount inputted from user and subtracted from inventory amount.  make sure they have enough to be able to set it that way.
+        {
+            Console.WriteLine("How many lemons would you want for recipe?");
+            int amountLemonRecipe = int.Parse(Console.ReadLine());
+            if(inventory.lemons > amountLemonRecipe)
+            {
+                inventory.lemons -= amountLemonRecipe;
+                inventory.DisplayInventory();
+            }
+            else
+            {
+                Console.WriteLine("Not enough in inventory");
+                LemonAmount();
+            }
+        }
+        public void SugarAmount()
+        {
+            Console.WriteLine("How much sugar would you want for recipe?");
+            int amountSugarRecipe = int.Parse(Console.ReadLine());
+            if (inventory.sugars > amountSugarRecipe)
+            {
+                inventory.sugars -= amountSugarRecipe;
+                inventory.DisplayInventory();
+            }
+            else
+            {
+                Console.WriteLine("Not enough in inventory");
+                SugarAmount();
+            }
+        }
+        public void IceCubeAmount()
+        {
+            Console.WriteLine("How much icecubes would you want for recipe?");
+            int amountIceRecipe = int.Parse(Console.ReadLine());
+            if (inventory.iceCubes > amountIceRecipe)
+            {
+                inventory.iceCubes -= amountIceRecipe;
+                inventory.DisplayInventory();
+            }
+            else
+            {
+                Console.WriteLine("Not enough in inventory");
+                IceCubeAmount();
+            }
+        }
+        public void CupAmount()
+        {//need user validation for this
+            Console.WriteLine("How much should a cup of lemonade be?");
+            double pricePerCup = double.Parse(Console.ReadLine());
+        }
+
+
 
     }
 }

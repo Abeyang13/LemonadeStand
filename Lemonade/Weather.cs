@@ -30,7 +30,7 @@ namespace Lemonade
         public void RandomCondition()
         {
             
-            conditions[0] = "rainy";
+            conditions[0] = "rain";
             conditions[1] = "cloudy";
             conditions[2] = "sunny";
             Random rng = new Random();

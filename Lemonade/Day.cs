@@ -7,7 +7,7 @@ namespace Lemonade
     class Day
     {
         //member variables has a
-        public Weather weather;
+        Weather weather;
         List<Customer> customers;
         Random random;
         
@@ -15,13 +15,13 @@ namespace Lemonade
 
         //contructor 
         public Day(Random random)
-        { 
+        {
             weather = new Weather(random);
             this.random = random;
             weather.RandomTemperature();
             weather.RandomCondition();
         }
-        public void RunDay(Player player)
+        public void RunDay(Player player, Store store)
         {
             //show actual temperature and condiiton 
             weather.ActualTemperature();
@@ -29,14 +29,15 @@ namespace Lemonade
 
 
             //show inventory 
-
-
             double moneyAtStartOfDay = player.bank;
+            player.inventory.DisplayInventory();
+            
             //player goes to store 
+            store.StoreMenu(player);
 
 
-
-            //player goes to stand and start the actual sale of lemonade
+            //player goes to stand and start the actual sale of lemonade also have to set recipe
+            //recipe cup price added to player.bank everytime a customer buys a cup
             CustomersList();
 
 

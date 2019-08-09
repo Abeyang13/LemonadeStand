@@ -8,7 +8,7 @@ namespace Lemonade
         {
             //Day day = new Day(new Random());
             //Console.WriteLine(day);
-
+            Console.ForegroundColor = ConsoleColor.DarkCyan;
             Game game = new Game();
             game.RunGame();
             //Store store = new Store();
