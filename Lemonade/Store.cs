@@ -63,66 +63,94 @@ namespace Lemonade
         public void PurchaseLemon(Player player)
         {  
             Console.WriteLine("How many lemons do you want to purchase?");
-            int lemonAmount = int.Parse(Console.ReadLine());
-            double totalAmount = lemon * lemonAmount;
-            if(player.bank > totalAmount)
+            int lemonAmount; 
+            if (int.TryParse(Console.ReadLine(), out lemonAmount))
             {
-                player.bank -= totalAmount;
-                player.inventory.lemons += lemonAmount;
+                double totalAmount = lemon * lemonAmount;
+                if (player.bank > totalAmount)
+                {
+                    player.bank -= totalAmount;
+                    player.inventory.lemons += lemonAmount;
+                }
+                else
+                {
+                    Console.WriteLine("Not enough money");
+                    PurchaseLemon(player);
+                }
             }
             else
             {
-                Console.WriteLine("Not enough money");
-                PurchaseLemon(player);
-            } 
+                Console.WriteLine("Please enter a valid number value");
+            }
         }
-        public void PurchaseSugar(Player player)
+    public void PurchaseSugar(Player player)
         {
             Console.WriteLine("How much sugar do you want to purchase?");
-            int sugarAmount = int.Parse(Console.ReadLine());
-            double totalAmount = sugar * sugarAmount;
-            if(player.bank > totalAmount)
+            int sugarAmount;
+            if(int.TryParse(Console.ReadLine(), out sugarAmount))
             {
-                player.bank -= totalAmount;
-                player.inventory.sugars += sugarAmount;
+                double totalAmount = sugar * sugarAmount;
+                if (player.bank > totalAmount)
+                {
+                    player.bank -= totalAmount;
+                    player.inventory.sugars += sugarAmount;
+                }
+                else
+                {
+                    Console.WriteLine("Not enough money");
+                    PurchaseSugar(player);
+                }
             }
             else
             {
-                Console.WriteLine("Not enough money");
-                PurchaseSugar(player);       
+                Console.WriteLine("Please enter a valid number value");
             }
         }
         public void PurchaseIce(Player player)
         {
             Console.WriteLine("How many icecubes do you want to purchase?");
-            int iceAmount = int.Parse(Console.ReadLine());
-            double totalAmount = iceCube * iceAmount;
-            if(player.bank > totalAmount)
-
+            int iceAmount;
+            if(int.TryParse(Console.ReadLine(), out iceAmount))
             {
-                player.bank -= totalAmount;
-                player.inventory.iceCubes += iceAmount;
+                double totalAmount = iceCube * iceAmount;
+                if (player.bank > totalAmount)
+
+                {
+                    player.bank -= totalAmount;
+                    player.inventory.iceCubes += iceAmount;
+                }
+                else
+                {
+                    Console.WriteLine("Not enough money");
+                    PurchaseIce(player);
+                }
             }
             else
             {
-                Console.WriteLine("Not enough money");
-                PurchaseIce(player);
+                Console.WriteLine("Please enter a valid number value");
             }
         }
         public void PurchaseCup(Player player)
         {
             Console.WriteLine("How many cups do you want to purchase?");
-            int cupAmount = int.Parse(Console.ReadLine());
-            double totalAmount = cup * cupAmount;
-            if(player.bank > totalAmount)
+            int cupAmount;
+            if(int.TryParse(Console.ReadLine(), out cupAmount))
             {
-                player.bank -= totalAmount;
-                player.inventory.cups += cupAmount;
+                double totalAmount = cup * cupAmount;
+                if (player.bank > totalAmount)
+                {
+                    player.bank -= totalAmount;
+                    player.inventory.cups += cupAmount;
+                }
+                else
+                {
+                    Console.WriteLine("Not enough money");
+                    PurchaseCup(player);
+                }
             }
             else
             {
-                Console.WriteLine("Not enough money");
-                PurchaseCup(player);
+                Console.WriteLine("Please enter a valid number value");
             }
         }
     }
