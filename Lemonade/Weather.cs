@@ -24,7 +24,7 @@ namespace Lemonade
         //methods to do 
         public void RandomTemperature()
         {
-            temperature = random.Next(50,100);
+            temperature = random.Next(50,100);//this is part of the "O" in SOLID.  It has a open and close.  ActualTemperature method has made an extension to temperature and then it closes.
             Console.WriteLine(" Today's temperature is " + temperature);
         }
         public void RandomCondition()

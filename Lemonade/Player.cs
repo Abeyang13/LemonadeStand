@@ -34,7 +34,7 @@ namespace Lemonade
             bool isValid = false;
             while(!isValid)
             { 
-                Console.WriteLine("Please select what you want to update for recipe per pitcher made.\nPlease input lemons, sugars, icecubes, and cups(for price per up).  Else input exit to exit Recipe Menu and go into selling your lemonade");
+                Console.WriteLine("Please select what you want to update for recipe per pitcher made.\nPlease input lemons, sugars, icecubes, and cups(for price per up).  Else input exit to exit Recipe Menu");
                 string recipe = Console.ReadLine().ToLower();
 
                 switch (recipe)
@@ -80,7 +80,6 @@ namespace Lemonade
                 else
                 {
                     Console.WriteLine("Not enough in inventory");
-                    LemonAmount();
                 }
             }
             else
@@ -101,7 +100,6 @@ namespace Lemonade
                 else
                 {
                     Console.WriteLine("Not enough in inventory");
-                    SugarAmount();
                 }
             }
             else
@@ -122,7 +120,6 @@ namespace Lemonade
                 else
                 {
                     Console.WriteLine("Not enough in inventory");
-                    IceCubeAmount();
                 }
             }
             else

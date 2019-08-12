@@ -47,8 +47,7 @@ namespace Lemonade
             {
                 Console.WriteLine($"We made a loss and you're eating them cups since we're negative ${profit}");
             }
-        }
-       
+        }       
         private void DisplayRules()
         {
             Console.WriteLine("These are the rules:\nPlayer starts with a $30 bank, and they go and buy materials for a lemonade stand.\nThen you set out a recipe for your lemonade stand, and go out and sell the lemonade.\nThe game consist of 7 days and then you add up the total of the week to see if you made a profit or a loss through the week.");

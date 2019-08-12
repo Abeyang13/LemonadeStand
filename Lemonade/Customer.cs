@@ -17,9 +17,6 @@ namespace Lemonade
         {
             this.random = new Random();
             this.pricePreferance = random.NextDouble();
-
-
-
             this.temperaturePreferance = random.Next(50, 101);
             MakeDecision(weather, pricePerCup);
         }
@@ -32,6 +29,14 @@ namespace Lemonade
             {
                 chooseToBuy = true;
                 Console.WriteLine("Buy");
+            }
+            else
+            {
+                if(weather.temperature < 55 && pricePreferance <= pricePerCup)
+                {
+                    chooseToBuy = true;
+                    Console.WriteLine("Buy");
+                }
             }
         }
     }  
