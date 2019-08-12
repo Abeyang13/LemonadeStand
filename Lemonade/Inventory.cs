@@ -21,15 +21,7 @@ namespace Lemonade
             this.cups = cups;
         }
 
-        //methods to do 
-        public void DisplayInventory()
-        {
-            Console.WriteLine("Your Inventory:");
-            Console.WriteLine($"Lemon: {lemons}");
-            Console.WriteLine($"Sugar: {sugars}");
-            Console.WriteLine($"IceCubes: {iceCubes}");
-            Console.WriteLine($"Cups: {cups}\n");
-        }
+        //methods to do
 
     }
 }

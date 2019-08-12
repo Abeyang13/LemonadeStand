@@ -27,7 +27,7 @@ namespace Lemonade
             bool isValid = false;
             while (!isValid)
             {
-                Console.WriteLine("Please select what you would want to purchase.\nPlease input lemon, sugar, icecube, cup, exit to exit menu, or back to go back to look inventory");
+                Console.WriteLine("Please select what you would want to purchase.\nPlease input lemon, sugar, icecube, cup, exit (to exit menu), or inventory to go back to look at inventory");
                 string storeItem = Console.ReadLine().ToLower();
                 switch (storeItem)
                 {
@@ -47,15 +47,14 @@ namespace Lemonade
                         PurchaseCup(player);
                         Console.WriteLine($"Your money left after purchase = ${player.bank}");
                         break;
-                    case "back":
-                        player.inventory.DisplayInventory();
+                    case "inventory":
+                        User_Interface.DisplayInventory(player.inventory);
                         break;
                     case "exit":
                         isValid = true;
                         break;
                     default:
                         Console.WriteLine("You did not put in a valid input.  Please try again!!");
-                        StoreMenu(player);
                         break;
                 }
             }
@@ -81,6 +80,7 @@ namespace Lemonade
             else
             {
                 Console.WriteLine("Please enter a valid number value");
+                PurchaseLemon(player);
             }
         }
     public void PurchaseSugar(Player player)
@@ -104,6 +104,7 @@ namespace Lemonade
             else
             {
                 Console.WriteLine("Please enter a valid number value");
+                PurchaseSugar(player);
             }
         }
         public void PurchaseIce(Player player)
@@ -128,6 +129,7 @@ namespace Lemonade
             else
             {
                 Console.WriteLine("Please enter a valid number value");
+                PurchaseIce(player);
             }
         }
         public void PurchaseCup(Player player)
@@ -151,6 +153,7 @@ namespace Lemonade
             else
             {
                 Console.WriteLine("Please enter a valid number value");
+                PurchaseCup(player);
             }
         }
     }

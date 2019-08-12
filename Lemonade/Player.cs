@@ -11,9 +11,9 @@ namespace Lemonade
         public double bank;
         public string name;
         public double pricePerCup;
-        int amountLemonRecipe;
-        int amountSugarRecipe;
-        int amountIceRecipe;
+        public int amountLemonRecipe;
+        public int amountSugarRecipe;
+        public int amountIceRecipe;
 
 
         //contructor 
@@ -34,7 +34,7 @@ namespace Lemonade
             bool isValid = false;
             while(!isValid)
             { 
-                Console.WriteLine("Please select what you want to update for recipe per pitcher made.\nPlease input lemons, sugars, icecubes, and cups(for price per up).  Else input exit to exit Recipe");
+                Console.WriteLine("Please select what you want to update for recipe per pitcher made.\nPlease input lemons, sugars, icecubes, and cups(for price per up).  Else input exit to exit Recipe Menu and go into selling your lemonade");
                 string recipe = Console.ReadLine().ToLower();
 
                 switch (recipe)
@@ -64,9 +64,8 @@ namespace Lemonade
                         break;
                     default:
                         Console.WriteLine("You have put a invalid input.  Please enter lemons, sugars, icecubes, cups, or exit");
-                        Recipe();
                         break;
-                } 
+                }
             }
         }
         public void LemonAmount()
@@ -87,6 +86,7 @@ namespace Lemonade
             else
             {
                 Console.WriteLine("Please enter a valid number value");
+                LemonAmount();
             }
         }
         public void SugarAmount()
@@ -107,6 +107,7 @@ namespace Lemonade
             else
             {
                 Console.WriteLine("Please enter a valid number value");
+                SugarAmount();
             }
         }
         public void IceCubeAmount()
@@ -127,6 +128,7 @@ namespace Lemonade
             else
             {
                 Console.WriteLine("Please enter a valid number value");
+                IceCubeAmount();
             }
         }
         public void CupAmount()
@@ -140,6 +142,7 @@ namespace Lemonade
             else
             {
                 Console.WriteLine("Please enter a valid number value");
+                CupAmount();
             }
            
         }

@@ -9,8 +9,8 @@ namespace Lemonade
         //member variables has a
         private Player playerName;
         double profit;
-        Store store;
-        List<Day> days;
+        private Store store;
+        private List<Day> days;
         Random random;
         
 
@@ -37,8 +37,8 @@ namespace Lemonade
                 days[numberOfDays].RunDay(playerName, store);
                 numberOfDays++;
             }
-            profit = playerName.bank - 30;
-            Console.WriteLine($"Your total for the week is ${playerName.bank}");
+            profit = Math.Round(playerName.bank * 100) / 100 - 30;
+            Console.WriteLine($"Your total for the week is ${Math.Round(playerName.bank * 100) / 100}");
             if (profit > 0)
             {
                 Console.WriteLine($"You Made a Profit of ${profit}");
@@ -51,9 +51,9 @@ namespace Lemonade
        
         private void DisplayRules()
         {
-            Console.WriteLine("these are the rules\n");
+            Console.WriteLine("These are the rules:\nPlayer starts with a $30 bank, and they go and buy materials for a lemonade stand.\nThen you set out a recipe for your lemonade stand, and go out and sell the lemonade.\nThe game consist of 7 days and then you add up the total of the week to see if you made a profit or a loss through the week.");
         }
-        public void SevenDays()
+        private void SevenDays()
         {
             const int numberOfDays = 7;
             days = new List<Day>();
